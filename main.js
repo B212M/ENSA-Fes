@@ -46,6 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const partners = [
     {
+      name: 'Lbien Bilal',
+      role: 'GDNC Legend',
+      description: 'Trying to make ur life easy and BETTER',
+      email: 'lbienbilal1@gmail.com',
+      whatsapp: '+212720174280'
+    },
+    {
       name: 'Ouadifi Zakaria',
       role: 'GDNC Legend',
       description: 'Trying to make ur life easy and BETTER',
@@ -58,13 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
       description: 'Trying to make ur life easy and BETTER',
       email: 'thomas.bernard@example.com',
       whatsapp: '+33600000001'
-    },
-    {
-      name: 'Lbien Bilal',
-      role: 'GDNC Legend',
-      description: 'Trying to make ur life easy and BETTER',
-      email: 'lbienbilal1@gmail.com',
-      whatsapp: '+212720174280'
     }
   ];
 
