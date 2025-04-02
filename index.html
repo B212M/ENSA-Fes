@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENSA - Fès Courses</title>
+    <link rel="icon" href="images/class.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <div class="search-bar">
+        <input type="search" placeholder="Rechercher..." id="searchInput">
+        <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </div>
+
+    <div class="hero">
+        <div class="logo bounce">
+          <img src="images/ensaf.jpg" alt="ENSAF" class="ensafc">  
+        </div>
+        <h1>École Nationale des Sciences Appliquées</h1>
+    </div>
+
+    <div class="container">
+        <div class="feature-cards">
+            <a href="https://zaikoss.github.io/CP1-ENSAF-WEBSITE/" target="_blank">
+              <div class="card" style="background-image: url('https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=80')">
+                  <div class="card-content">
+                      <h2>CP1 - Première Année</h2>
+                      <p>Formation fondamentale en sciences de l'ingénieur. Acquisition des bases en mathématiques, physique et informatique pour bâtir des compétences solides.</p>
+                  </div>
+              </div>
+            </a>
+            <a href="https://b212m.github.io/CP2/" target="_blank">
+              <div class="card" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80')">
+                  <div class="card-content">
+                      <h2>CP2 - Deuxième Année</h2>
+                      <p>Approfondissement des connaissances scientifiques et techniques avec des projets appliqués. Préparation aux spécialités d'ingénierie et au monde professionnel.</p>
+                  </div>
+              </div>
+            </a>
+        </div>
+
+        <div class="flowing-cards" id="flowingCards"></div>
+
+        <div class="about-section">
+            <h2>Notre Équipe</h2>
+            <div class="partners" id="partners"></div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Contactez-nous</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 ENSA-Fès. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Floating PDF Button -->
+    <button id="pdfButton" class="pdf-button" aria-label="Download PDFs">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+    </button>
+
+    <!-- PDF Modal -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h2>les 11 filières</h2>
+                <button class="close-button" aria-label="Close modal">×</button>
+            </div>
+            <div class="pdf-list"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
