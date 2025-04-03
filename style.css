@@ -248,111 +248,177 @@ body {
   gap: 1.5rem;
 }
 
-/* ===== ENHANCED LOGO STYLES ===== */
+/* ===== RECTANGULAR LOGO STYLES ===== */
 .logo-container {
-  width: clamp(120px, 18vw, 180px);
-  height: clamp(120px, 18vw, 180px);
+  --logo-width: clamp(240px, 30vw, 320px); /* Increased base size by ~50% */
+  --logo-height: clamp(120px, 15vw, 160px); /* Maintained aspect ratio */
+  --logo-ratio: calc(var(--logo-height) / var(--logo-width));
+  
+  width: var(--logo-width);
+  height: var(--logo-height);
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem; /* Slightly increased margin */
   display: grid;
   place-items: center;
+  isolation: isolate;
 }
 
 .ensaf-logo {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: min(8px, 0.0375 * var(--logo-width)); /* Slightly larger radius */
   box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.25),
+    0 6px 25px rgba(0, 0, 0, 0.25),
     0 0 0 1px rgba(255, 255, 255, 0.1);
   filter: 
-    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))
+    drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3))
     brightness(1.05) 
-    contrast(1.1);
+    contrast(1.1)
+    saturate(1.05);
   position: relative;
   z-index: 2;
-  transition: all 0.4s cubic-bezier(0.16, 0.8, 0.32, 1.2);
+  transition: transform 0.4s cubic-bezier(0.16, 0.8, 0.32, 1.2),
+              filter 0.35s ease,
+              box-shadow 0.4s ease;
+  will-change: transform, filter, box-shadow;
+  backface-visibility: hidden;
 }
 
 .logo-glow {
   position: absolute;
-  width: 110%;
-  height: 110%;
-  border-radius: 16px;
+  inset: -5% -2.5%;
+  border-radius: min(10px, 0.05 * var(--logo-width));
   background: radial-gradient(
-    circle at center, 
-    rgba(255, 255, 255, 0.4) 0%, 
-    transparent 65%
+    ellipse at center,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.2) 40%,
+    transparent 70%
   );
   animation: pulseGlow 3.5s ease-in-out infinite;
   z-index: 1;
   opacity: 0.8;
+  pointer-events: none;
 }
 
 /* Logo hover effects */
 .logo-container:hover .ensaf-logo {
-  transform: scale(1.03) rotate(1deg);
+  transform: translateY(-3px) scale(1.03); /* Slightly more pronounced lift */
   box-shadow: 
-    0 6px 28px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.15);
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 3px 15px rgba(255, 255, 255, 0.07);
   filter: 
-    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))
+    drop-shadow(0 5px 10px rgba(0, 0, 0, 0.4))
     brightness(1.08) 
-    contrast(1.15);
+    contrast(1.15)
+    saturate(1.08);
 }
 
 .logo-container:hover .logo-glow {
   opacity: 1;
   animation: pulseGlowHover 2.5s ease-in-out infinite;
+  filter: blur(8px); /* Increased blur for larger logo */
 }
 
-/* Enhanced glow animation */
+/* Enhanced glow animation with subtle x/y movement */
 @keyframes pulseGlow {
   0%, 100% {
-    transform: scale(0.98);
+    transform: scale(0.98) translateY(2px);
     opacity: 0.7;
+    filter: blur(6px);
   }
   50% {
-    transform: scale(1.03);
+    transform: scale(1.02) translateY(-2px);
     opacity: 0.9;
+    filter: blur(8px);
   }
 }
 
 @keyframes pulseGlowHover {
   0%, 100% {
-    transform: scale(1);
+    transform: scale(1) translateY(1px);
     opacity: 0.9;
+    filter: blur(8px);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.03) translateY(-2px);
     opacity: 1;
+    filter: blur(10px);
   }
 }
 
+/* Loading state for logo (optional) */
+.logo-container.loading .ensaf-logo {
+  animation: logoLoading 1.8s ease-in-out infinite;
+}
+
+@keyframes logoLoading {
+  0%, 100% { opacity: 0.8; filter: brightness(0.95) blur(0px); }
+  50% { opacity: 1; filter: brightness(1.1) blur(0.5px); }
+}
 
 /* Responsive adjustments for logo */
 @media (max-width: 768px) {
   .logo-container {
-    width: clamp(100px, 22vw, 150px);
-    height: clamp(100px, 22vw, 150px);
-    margin-bottom: 1rem;
+    --logo-width: clamp(200px, 40vw, 280px); /* Increased from previous values */
+    --logo-height: clamp(100px, 20vw, 140px);
+    margin-bottom: 1.5rem;
   }
   
   .ensaf-logo {
-    border-radius: 10px;
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.22),
+      0 0 0 1px rgba(255, 255, 255, 0.08);
   }
 }
 
 @media (max-width: 480px) {
   .logo-container {
-    width: clamp(80px, 25vw, 120px);
-    height: clamp(80px, 25vw, 120px);
+    --logo-width: clamp(180px, 45vw, 220px); /* Increased from previous values */
+    --logo-height: clamp(90px, 22.5vw, 110px);
+    margin-bottom: 1.25rem;
   }
   
   .logo-glow {
-    width: 115%;
-    height: 115%;
+    opacity: 0.7;
+  }
+  
+  /* Simplify hover effects on mobile devices */
+  .logo-container:hover .ensaf-logo {
+    transform: translateY(-1px) scale(1.02);
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  .ensaf-logo {
+    filter: 
+      drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4))
+      brightness(1.1) 
+      contrast(1.05)
+      saturate(1);
+  }
+  
+  .logo-glow {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.35) 0%,
+      rgba(255, 255, 255, 0.15) 40%,
+      transparent 70%
+    );
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .ensaf-logo {
+    border: 1px solid currentColor;
+    filter: contrast(1.2) brightness(1) saturate(1);
+  }
+  
+  .logo-glow {
+    display: none;
   }
 }
 
