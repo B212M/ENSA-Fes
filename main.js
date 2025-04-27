@@ -1,3 +1,10 @@
+// loader
+// Simulate a loading process (e.g., image loading or any content loading)
+window.addEventListener('load', function () {
+  // After the content is loaded, remove the loader
+  document.body.classList.add('loaded');
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   // Theme Management
   const initTheme = () => {
