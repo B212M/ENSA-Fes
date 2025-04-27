@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Data
   const featuredLinks = [
     { title: 'ISCSI', image: 'images/ISCSI.png', description: 'Ingénierie des Systèmes Communicants et Sécurité Informatique.', link: 'https://b212m.github.io/ISCSI/' },
-    { title: '3IACN', image: 'images/3IACN.png', description: 'Ingénierie Informatique, Intelligence Artificielle et Confiance Numérique.', link: 'https://b212m.github.io/3IACN/' },
+    { title: '3IACN v1', image: 'images/3IACN.png', description: 'Ingénierie Informatique, Intelligence Artificielle et Confiance Numérique.', link: 'https://threeiacn-ensaf-app.onrender.com' },
+    { title: '3IACN v2', image: 'images/3IACN.png', description: 'Ingénierie Informatique, Intelligence Artificielle et Confiance Numérique.', link: 'https://b212m.github.io/3IACN/' },
     { title: 'GDNC v1', image: 'images/GDNC.png', description: 'Génie du développement numérique et Cybersécurité.', link: 'https://b212m.github.io/GDNC/' },
     { title: 'GDNC v2', image: 'images/GDNC.png', description: 'Génie du développement numérique et Cybersécurité.', link: ' https://zaikoss.github.io/gdnc-react/' },
     { title: 'ISDIA', image: 'images/ISDIA.png', description: 'Ingénierie en Science de Données et Intelligence Artificielle.', link: 'https://b212m.github.io/ISDIA/' },
@@ -48,23 +49,23 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Lbien Bilal',
       role: 'GDNC Legend',
-      description: 'Trying to make ur life easy and BETTER',
+      description: 'Trying to make your life easy and BETTER',
       email: 'lbienbilal1@gmail.com',
       whatsapp: '+212720174280'
     },
     {
       name: 'Ouadifi Zakaria',
       role: 'GDNC Legend',
-      description: 'Trying to make ur life easy and BETTER',
+      description: 'Trying to make your life easy and BETTER',
       email: 'marie.laurent@example.com',
       whatsapp: '+16099446992'
     },
     {
-      name: 'Squelli Hachem',
+      name: 'Squalli Elhoussaini Hachem',
       role: 'ILIA Legend',
-      description: 'Trying to make ur life easy and BETTER',
-      email: 'thomas.bernard@example.com',
-      whatsapp: '+33600000001'
+      description: 'Trying to make your life easy and BETTER',
+      email: 'workhachem@gmail.com',
+      whatsapp: '+212626138127'
     }
   ];
 
@@ -206,3 +207,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// title from lrft to right and description from right to lest annimation 
+
